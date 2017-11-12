@@ -1,0 +1,30 @@
+<html>
+<head>
+  <style>
+    body {
+      text-align: center;
+      font-style: normal;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+<h1> you played <%= @game.player.choice %> ! the computer played <%= @game.computer.choice %>!  </h1>
+
+<% if @game.winner != nil %>
+<h1> <%= @game.winner %> wins this round! </h1>
+  <% else %>
+<h1> you drew with computer! </h1>
+ <% end %>
+
+<h2> <%= @game.player.name %> : <%= @game.player.points %> points </h2>
+<h2> computer : <%= @game.computer.points %> points </h2>
+
+
+<h1> click below to start the next round </h1>
+
+<form action="/play" method="get">
+  <input type="submit" value="PLAY">
+</form>
+</body>
+</html>

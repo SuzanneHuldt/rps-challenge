@@ -1,0 +1,42 @@
+<html>
+<head>
+  <style>
+    body {
+      text-align: center;
+      font-style: normal;
+      font-family: sans-serif;
+    }
+    .button {
+    background-color: gray; /* Green */
+    border: none;
+    color: white;
+    padding: 60px 92px;
+    text-align: center;
+    -webkit-text-stroke: none;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+  </style>
+</head>
+<body>
+<h1> welcome <%= @name %>! are you ready to play rock, paper scissors? </h1>
+
+<h2> when you're ready to play, choose one option below. remember - rock beats scissors, scissors beat paper and paper beats rock! </h2>
+
+<p1> you'll play against the computer, the one with the most points after 3 turns is the winner! </p1>
+
+
+<form action="/rock" method="get">
+  <button class=button type="submit">ROCK</button>
+</form>
+<form action="/paper" method="get">
+  <button class=button type="submit">PAPER</button>
+</form>
+
+<form action="/scissors" method="get">
+  <button class=button type="submit">SCISSORS</button>
+</form>
+</body>
+
+</html>

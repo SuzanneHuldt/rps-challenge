@@ -1,0 +1,38 @@
+
+<html>
+<head>
+  <style>
+    body {
+      text-align: center;
+      font-style: normal;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+<% if @game.player.points == @game.computer.points %>
+<h1> you drew with the computer! </h1>
+<% elsif @game.player.points > @game.computer.points %>
+<h1> WE HAVE A CHAMPION!</h1>
+<h1> congratulations! you won!</h1>
+<%else%>
+<h1> WE HAVE A CHAMPION!</h1>
+<h1> sorry, computer won this time! </h1>
+<%end%>
+
+<h2> <%= @game.player.name %> : <%= @game.player.points %> points </h2>
+<h2> computer : <%= @game.computer.points %> points </h2>
+
+<h2> to start a new game, click below! </h2>
+
+<form action="/champion" method="get">
+  <input type="submit" value="PLAY">
+</form>
+
+<h2> to sign out click here </h2>
+
+<form action="/" method="get">
+  <input type="submit" value="SIGN OUT">
+</form>
+</body>
+</html>
